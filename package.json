@@ -1,0 +1,31 @@
+{
+  "name": "009-cleanblog-project",
+  "version": "1.0.0",
+  "description": "Clean Blog Project | Node.js",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmreSamurlu/CleanBlog-Project.git"
+  },
+  "keywords": [
+    "node",
+    "blog",
+    "project"
+  ],
+  "author": "Emre Samurlu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmreSamurlu/CleanBlog-Project/issues"
+  },
+  "homepage": "https://github.com/EmreSamurlu/CleanBlog-Project#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.13",
+    "prettier": "2.4.1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
