@@ -1,62 +1,69 @@
 <%- include('partials/_header') -%>
-<body>
 
-  <!-- Navigation -->
-  <%- include('partials/_navigation') -%>
+  <body>
+
+    <!-- Navigation -->
+    <%- include('partials/_navigation') -%>
 
 
-  <!-- Page Header -->
-  <header class="masthead" style="background-image: url('img/home-bg.jpg')">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-          <div class="site-heading">
-            <h1>Clean Blog</h1>
-            <span class="subheading">A Blog Theme by Start Bootstrap</span>
+      <!-- Page Header -->
+      <header class="masthead" style="background-image: url('img/home-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+              <div class="site-heading">
+                <h1>Clean Blog</h1>
+                <span class="subheading">A Blog Theme by Start Bootstrap</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <% for(let i=posts.length - 1 ; i>= 0; i--) { %>
+              <div class="post-preview">
+                <a href="/posts/<%= posts[i]._id %>">
+                  <h2 class="post-title">
+                    <%= posts[i].title %>
+                  </h2>
+                  <h4 class="post-name">
+                    Send by: <%= posts[i].name %>
+                  </h4>
+                  <p class="post-subtitle" style="white-space: nowrap; 
+                        overflow: hidden;
+                        text-overflow: ellipsis; 
+                        ">
+                    <%= posts[i].detail %>
+                  </p>
+                  <p class="post-date" style="font-size: 14px; margin: 0; padding: 0; text-align: right;">
+                    <%= posts[i].dateCreated %>
+                  </p>
+                </a>
+              </div>
+              <hr>
+              <% } %>
+                <!-- Pager -->
+                <div class="clearfix">
+                  <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+                </div>
           </div>
         </div>
       </div>
-    </div>
-  </header>
 
-  <!-- Main Content -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
-        <% for(let i = posts.length - 1 ; i >= 0; i--) { %>
-        <div class="post-preview">
-          <a href="/posts/<%= posts[i]._id %>">
-            <h2 class="post-title">
-              <%= posts[i].title %>
-            </h2>
-            <h4 class="post-name">
-              Send by: <%= posts[i].name %>
-            </h4>
-            <h3 class="post-subtitle">
-              <%= posts[i].detail %>
-            </h3>
-          </a>
-        </div>
-        <hr>
-        <% } %>
-        <!-- Pager -->
-        <div class="clearfix">
-          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-        </div>
-      </div>
-    </div>
-  </div>
+      <hr>
 
-  <hr>
+      <!-- Footer -->
+      <!-- Bootstrap core JavaScript -->
+      <!-- Custom scripts for this template -->
+      <%- include('partials/_footer') -%>
 
-  <!-- Footer -->
-  <!-- Bootstrap core JavaScript -->
-  <!-- Custom scripts for this template -->
-  <%- include('partials/_footer') -%>
 
-  
 
-</body>
+  </body>
 
-</html>
+  </html>
